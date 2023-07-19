@@ -92,7 +92,7 @@ def login_user(username, password):
     result.success = False
     if res.json()["code"] == 200:
         result.success = True
-        result.token = res.json()["login_info"]["token"]
+        result.token = res.json()["data"]["token"]
     else:
         result.error = "接口返回码是 【 {} 】, 返回信息：{} ".format(res.json()["code"], res.json()["msg"])
     result.msg = res.json()["msg"]
