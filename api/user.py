@@ -22,7 +22,8 @@ class User(RestClient):
         return self.post("/register", **kwargs)
 
     def login(self, **kwargs):
-        return self.post("/login", **kwargs)
+        # return self.post("/login", **kwargs)
+        return self.get("/auth", **kwargs)
 
     def update(self, user_id, **kwargs):
         return self.put("/update/user/{}".format(user_id), **kwargs)

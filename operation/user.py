@@ -87,9 +87,10 @@ def login_user(username, password):
     header = {
         "Content-Type": "application/x-www-form-urlencoded"
     }
-    res = user.login(data=payload, headers=header)
+    # res = user.login(data=payload, headers=header)
+    res = user.login(params=payload, headers=header)
     result.success = False
-    if res.json()["code"] == 0:
+    if res.json()["code"] == 200:
         result.success = True
         result.token = res.json()["login_info"]["token"]
     else:
